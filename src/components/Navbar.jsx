@@ -1,17 +1,52 @@
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/*Logo */}
       <div className="flex items-center gap-4 text-2xl font-bold">
-        <img src="/logo.png" alt="logo" className="size-8"/>
+        <img src="/logo.png" alt="logo" className="size-8" />
         <span>Blog App</span>
       </div>
 
       {/*Mobile Menu */}
-      <div className="md:hidden">M</div>
+      <div className="md:hidden">
+        {/*Mobile Menu button */}
+        <div
+          className="cursor-pointer"
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          {open ? <X /> : <Menu />}
+        </div>
+
+        {/*Mobile Menu list */}
+        <div
+          className={`w-full h-screen flex flex-col items-center justify-center absolute top-16 bg-[#e6e6ff] transition-all ease-in-out gap-8 font-medium text-lg 
+          ${open ? "-right-0" : "-right-[100%]"}`}
+        >
+          <a href="/">Home</a>
+          <a href="/">Trending</a>
+          <a href="/">Most Popular</a>
+          <a href="/">About</a>
+          <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
+            Login 👋
+          </button>
+        </div>
+      </div>
 
       {/*Desktop Menu */}
-      <div className="hidden md:flex">D</div>
+      <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
+        <a href="/">Home</a>
+        <a href="/">Trending</a>
+        <a href="/">Most Popular</a>
+        <a href="/">About</a>
+        <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
+          Login 👋
+        </button>
+      </div>
     </div>
   );
 };
