@@ -1,6 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Image from "./Image";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -8,10 +9,10 @@ const Navbar = () => {
   return (
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/*Logo */}
-      <div className="flex items-center gap-4 text-2xl font-bold">
+      <Link to="/" className="flex items-center gap-4 text-2xl font-bold">
         <Image src="logo.png" alt="logo" h={32} w={32} />
         <span>Blog App</span>
-      </div>
+      </Link>
 
       {/*Mobile Menu */}
       <div className="md:hidden">
