@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Image from "./Image";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -8,7 +9,7 @@ const Navbar = () => {
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/*Logo */}
       <div className="flex items-center gap-4 text-2xl font-bold">
-        <img src="/logo.png" alt="logo" className="size-8" />
+        <Image src="logo.png" alt="logo" h={32} w={32} />
         <span>Blog App</span>
       </div>
 
