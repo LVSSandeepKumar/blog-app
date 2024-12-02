@@ -63,7 +63,6 @@ const Homepage = () => {
       </div>
       {/* Categories */}
       <MainCategories />
-      fenqqifip
       {/*Featured Posts */}
       {/*Post List */}
     </div>
